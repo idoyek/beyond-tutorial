@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Message
 from .forms import MessageForm
 
+
 def board(request):
     messages = Message.objects.order_by('-date')
     if request.method == "POST":
@@ -15,4 +16,3 @@ def board(request):
         'messages': messages,
         'form': form,
     })
-    
